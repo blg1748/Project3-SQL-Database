@@ -1,0 +1,20 @@
+-- Inserting data into the student table
+INSERT INTO student_schema.students (name, age, gender_id, year_id, major_id, monthly_gas_expenses)
+VALUES ('John Doe', 25, 1, 1, 1, 200.00);
+
+-- Deleting a record from the student table
+DELETE FROM student_schema.students
+WHERE student_id = 1;
+
+-- Updating monthly gas expenses for a student
+UPDATE student_schema.students
+SET monthly_gas_expenses = 300.00
+WHERE student_id = 1;
+
+-- Searching for students in the junior year
+SELECT * FROM student_schema.students
+WHERE year_id = 3;
+
+-- Sorting students by name in ascending order
+SELECT * FROM student_schema.students
+ORDER BY name ASC;
