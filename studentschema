@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS student_schema.student
+(
+    student_id SERIAL PRIMARY KEY,
+    gender_id INTEGER,
+    year_id INTEGER,
+    major_id INTEGER,
+    vehicle_id INTEGER,  -- Add vehicle_id column
+    age INTEGER NOT NULL,
+    monthly_fuel_expenses NUMERIC NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    CONSTRAINT fk_gender FOREIGN KEY (gender_id) REFERENCES student_schema.gender(gender_id),
+    CONSTRAINT fk_major FOREIGN KEY (major_id) REFERENCES student_schema.major(major_id),
+    CONSTRAINT fk_year FOREIGN KEY (year_id) REFERENCES student_schema.year_in_school(year_id),
+    CONSTRAINT fk_vehicle FOREIGN KEY (vehicle_id) REFERENCES student_schema.vehicle(vehicle_id)  -- Add foreign key constraint
+);
